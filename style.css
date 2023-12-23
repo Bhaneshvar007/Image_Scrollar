@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image-Container {
+    width: 800px;
+    overflow: hidden;
+    position: relative;
+    margin: 2.5vw auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+}
+
+.sliders {
+    height: 80vh;
+    display: flex;
+    transition: transform .5s ease-in-out;
+}
+
+.slider img {
+    height: 100%;
+    width: 800px;
+    opacity: 100%;
+    transition: 1s;
+    /* display: none; */
+    z-index: -1;
+}
+
+.slider img:hover {
+    opacity: 80%;
+}
+
+.slider p {
+    font-size: 5vw;
+    z-index: 1;
+    color: black;
+}
+
+.slider.active {
+    transform: translateX(0);
+}
+
+.image-Container .controlBar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2vw;
+}
+
+.controlBar button {
+    padding: .5vw 2.5vw;
+    background-color: royalblue;
+    border-radius: 5px;
+    border: 1px white solid;
+    cursor: pointer;
+    transition: 1s;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+.controlBar button:active {
+    scale: 1.05;
+}
