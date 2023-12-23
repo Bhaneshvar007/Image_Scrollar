@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(25deg, rgba(234, 226, 77, 0.623), #e89f5f);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 80vh;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    transition: transform .5s ease-in-out;
+}
+
+.cards {
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    margin-left: 15%;
+}
+
+.cards.active{
+    transform: translateX(0%);
+}
+
+.card {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+    /* border: 1px solid black; */
+    padding: 2vw;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.245);
+    background-color: #dcd9d931;
+    animation: zoominOut 1s ease infinite;
+}
+
+@keyframes zoominOut {
+
+    0%,
+    100% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.01;
+    }
+}
+
+.card:hover {
+    animation: none;
+}
+
+
+.card h2 {
+    color: #444;
+    font-size: 2vw;
+    text-shadow: 1px 1px 2px white;
+}
+
+.card h1 {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    color: #555;
+    color: rgba(220, 20, 60, 0.632);
+    font-size: 5vw;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.card:hover.card h1 {
+    opacity: 100%;
+}
+
+.card p {
+    font-size: 1vw;
+    font-style: italic;
+}
+
+.card img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    border: 2px solid crimson;
+}
+
+.card button {
+    background-color: royalblue;
+    font-size: 1vw;
+    font-weight: bold;
+    color: white;
+    padding: .6vw 1vw;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0;
+}
+
+.controlCenter {
+    position: absolute;
+    bottom: 55%;
+    left: 50%;
+    display: flex;
+}
+
+.LeftAro,
+.RightAro {
+    position: absolute;
+    right: 400px;
+    font-size: 3vw;
+    color: #555;
+    cursor: pointer;
+    transition: scale 1s;
+}
+
+.RightAro {
+    left: 400px;
+}
+
+.LeftAro:active,
+.RightAro:active {
+    scale: 1.2;
+}
+
+@media (max-width:550px) {
+    .container{
+        background-color: red;
+    }
+}
